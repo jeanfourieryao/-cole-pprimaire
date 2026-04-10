@@ -343,6 +343,7 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
       <div class="ctab active" onclick="setComp(1)">Compo. 1</div>
       <div class="ctab" onclick="setComp(2)">Compo. 2</div>
       <div class="ctab" onclick="setComp(3)">Compo. 3</div>
+      <div class="ctab" onclick="setComp(4)">Compo. passage</div>
     </div>
   </div>
   <div id="notesContent"></div>
@@ -362,6 +363,7 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
       <div class="ctab active" onclick="setBulComp(1)">Compo. 1</div>
       <div class="ctab" onclick="setBulComp(2)">Compo. 2</div>
       <div class="ctab" onclick="setBulComp(3)">Compo. 3</div>
+      <div class="ctab" onclick="setBulComp(4)">Compo. passage</div>
     </div>
     <button class="btn btn-navy no-print" onclick="window.print()">🖨️  Imprimer / PDF</button>
   </div>
@@ -453,8 +455,8 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
 //  CONFIGURATION DES MATIÈRES PAR CLASSE ET COMPOSITION
 // ═══════════════════════════════════════════════════════════
 
-// CP1 Composition 1 : Math + Français (Graphisme, D.visuelle, D.auditive, Lecture, Dessin, Poésie/chant) + AEC(dessin/Lecture/poésie) + EDHO
-// CP1 C2 & C3 + CP2 : Math + Français (Ecriture, Copie, Dictée, Exp.Ecrite, Lecture, Dessin, Poésie) + AEC + EDHO
+// CP1 Composition 1 : Math + Français (Graphisme, Discrmination visuelle, Discrimination auditive, Lecture, Dessin, Poésie/chant) + AEC(dessin/Lecture/poésie) + EDHC
+// CP1 C2 & C3 + CP2 : Math + Français (Ecriture, Copie, Dictée, Exp.Ecrite, Lecture, Dessin, Poésie) + AEC + EDHC
 // CE1→CM2 : Expl.Texte + Eveil au Milieu + Dictée + Math → Total/8.5
 
 const CONFIGS = {
@@ -510,6 +512,23 @@ const CONFIGS = {
       ]
     }
   },
+   c4: {
+      diviseur: 9,
+      label: 'Composition de passage',
+      groupes: [
+        { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
+        { nom: 'FRANÇAIS', matieres: [
+          { nom: 'Écriture', max: 10 },
+          { nom: 'Copie', max: 10 },
+          { nom: 'Dictée', max: 10 },
+          { nom: 'Expression Écrite', max: 10 },
+          { nom: 'Lecture', max: 10 },
+          { nom: 'Dessin', max: 10 },
+          { nom: 'Poésie / Chant', max: 10 },
+        ]},
+        { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
+      ]
+   }
   CP2: {
     c1: { diviseur: 9, label: '1ère Composition', groupes: [
       { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
@@ -540,13 +559,24 @@ const CONFIGS = {
         { nom: 'Poésie / Chant', max: 10 },
       ]},
       { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
+    ]},
+    c4: { diviseur: 9, label: 'Composition de passage', groupes: [
+      { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
+      { nom: 'FRANÇAIS', matieres: [
+        { nom: 'Écriture', max: 10 }, { nom: 'Copie', max: 10 },
+        { nom: 'Dictée', max: 10 }, { nom: 'Expression Écrite', max: 10 },
+        { nom: 'Lecture', max: 10 }, { nom: 'Dessin', max: 10 },
+        { nom: 'Poésie / Chant', max: 10 },
+      ]},
+      { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
     ]}
+}
   }
 };
 // CE1, CE2, CM1, CM2 identiques
 ['CE1','CE2','CM1','CM2'].forEach(cl => {
   CONFIGS[cl] = {};
-  ['c1','c2','c3'].forEach((c,i) => {
+  ['c1','c2','c3,'c4'].forEach((c,i) => {
     CONFIGS[cl][c] = {
       diviseur: 8.5,
       label: `${i+1}${i===0?'ère':'ème'} Composition`,
