@@ -262,7 +262,7 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
 <header>
   <div class="hrow">
     <div>
-      <div class="htitle">🏫 ÉcoleApp Primaire</div>
+      <div class="htitle">🏫 École Primaire</div>
       <div class="hsub" id="hSub">Chargement...</div>
     </div>
     <div class="hbadges">
@@ -323,7 +323,7 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
     </div>
     <div class="field"><label>Lieu de Naissance</label><input type="text" id="fLieu" placeholder="Abidjan"></div>
     <div class="field"><label>Parent / Tuteur</label><input type="text" id="fParent" placeholder="Nom du tuteur"></div>
-    <div class="field"><label>Téléphone</label><input type="tel" id="fTel" placeholder="+225 07 00 00 00 00"></div>
+    <div class="field"><label>Téléphone</label><input type="tel" id="fTel" placeholder="07 00 00 00 00"></div>
   </div>
   <button class="btn btn-green" onclick="saveEleve()">💾  Enregistrer l'élève</button>
   <button class="btn btn-ghost" onclick="resetForm()">🗑️  Vider le formulaire</button>
@@ -383,7 +383,7 @@ header { background:linear-gradient(135deg,var(--navy),#1a5c9a); color:#fff;
   <div class="card">
     <div class="ctitle">⚙️ Paramètres École</div>
     <div class="field"><label>Nom de l'École</label><input type="text" id="setEcole" placeholder="École Primaire Publique..."></div>
-    <div class="field"><label>Inspection</label><input type="text" id="setInspect" placeholder="IEP de..."></div>
+    <div class="field"><label>Inspection</label><input type="text" id="setInspect" placeholder="IEPP de..."></div>
     <div class="field"><label>Ville</label><input type="text" id="setVille" placeholder="Abidjan"></div>
     <div class="field"><label>Pays</label><input type="text" id="setPays" placeholder="CÔTE D'IVOIRE"></div>
     <button class="btn btn-navy" onclick="saveConfig()">💾  Sauvegarder la configuration</button>
@@ -466,13 +466,13 @@ const CONFIGS = {
         { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
         { nom: 'FRANÇAIS', matieres: [
           { nom: 'Graphisme', max: 10 },
-          { nom: 'D. Visuelle', max: 10 },
-          { nom: 'D. Auditive', max: 10 },
+          { nom: 'Discrimination Visuelle', max: 10 },
+          { nom: 'Discrimination Auditive', max: 10 },
           { nom: 'Lecture', max: 10 },
           { nom: 'Dessin', max: 10 },
           { nom: 'Poésie / Chant', max: 10 },
         ]},
-        { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+        { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
       ]
     },
     c2: {
@@ -489,7 +489,7 @@ const CONFIGS = {
           { nom: 'Dessin', max: 10 },
           { nom: 'Poésie / Chant', max: 10 },
         ]},
-        { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+        { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
       ]
     },
     c3: {
@@ -501,12 +501,12 @@ const CONFIGS = {
           { nom: 'Écriture', max: 10 },
           { nom: 'Copie', max: 10 },
           { nom: 'Dictée', max: 10 },
-          { nom: 'Exp. Écrite', max: 10 },
+          { nom: 'Expression Écrite', max: 10 },
           { nom: 'Lecture', max: 10 },
           { nom: 'Dessin', max: 10 },
           { nom: 'Poésie / Chant', max: 10 },
         ]},
-        { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+        { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
       ]
     }
   },
@@ -515,31 +515,31 @@ const CONFIGS = {
       { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
       { nom: 'FRANÇAIS', matieres: [
         { nom: 'Écriture', max: 10 }, { nom: 'Copie', max: 10 },
-        { nom: 'Dictée', max: 10 }, { nom: 'Exp. Écrite', max: 10 },
+        { nom: 'Dictée', max: 10 }, { nom: 'Expression Écrite', max: 10 },
         { nom: 'Lecture', max: 10 }, { nom: 'Dessin', max: 10 },
         { nom: 'Poésie / Chant', max: 10 },
       ]},
-      { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+      { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
     ]},
     c2: { diviseur: 9, label: '2ème Composition', groupes: [
       { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
       { nom: 'FRANÇAIS', matieres: [
         { nom: 'Écriture', max: 10 }, { nom: 'Copie', max: 10 },
-        { nom: 'Dictée', max: 10 }, { nom: 'Exp. Écrite', max: 10 },
+        { nom: 'Dictée', max: 10 }, { nom: 'Expression Écrite', max: 10 },
         { nom: 'Lecture', max: 10 }, { nom: 'Dessin', max: 10 },
         { nom: 'Poésie / Chant', max: 10 },
       ]},
-      { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+      { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
     ]},
     c3: { diviseur: 9, label: '3ème Composition', groupes: [
       { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 10 }] },
       { nom: 'FRANÇAIS', matieres: [
         { nom: 'Écriture', max: 10 }, { nom: 'Copie', max: 10 },
-        { nom: 'Dictée', max: 10 }, { nom: 'Exp. Écrite', max: 10 },
+        { nom: 'Dictée', max: 10 }, { nom: 'Expression Écrite', max: 10 },
         { nom: 'Lecture', max: 10 }, { nom: 'Dessin', max: 10 },
         { nom: 'Poésie / Chant', max: 10 },
       ]},
-      { nom: 'AEC', matieres: [{ nom: 'EDHO', max: 10 }] },
+      { nom: 'AEC', matieres: [{ nom: 'EDHC', max: 10 }] },
     ]}
   }
 };
@@ -551,7 +551,7 @@ const CONFIGS = {
       diviseur: 8.5,
       label: `${i+1}${i===0?'ère':'ème'} Composition`,
       groupes: [
-        { nom: 'FRANÇAIS', matieres: [{ nom: 'Expl. de Texte', max: 50 }] },
+        { nom: 'FRANÇAIS', matieres: [{ nom: 'Exploitation de Texte', max: 50 }] },
         { nom: 'EVEIL AU MILIEU', matieres: [{ nom: 'Éveil au Milieu', max: 50 }] },
         { nom: 'DICTÉE', matieres: [{ nom: 'Dictée', max: 20 }] },
         { nom: 'MATHÉMATIQUES', matieres: [{ nom: 'Mathématiques', max: 50 }] },
@@ -990,7 +990,7 @@ function renderBulletin() {
   const hasPhoto = e.photo && e.photo.length > 0;
   const maxTotal = mats.reduce((s, m) => s + m.max, 0);
   const cfgPays    = config.pays    || "CÔTE D'IVOIRE";
-  const cfgInspect = config.inspect || "[INSPECTION DE L'ENSEIGNEMENT PRIMAIRE]";
+  const cfgInspect = config.inspect || "[INSPECTION DE L'ENSEIGNEMENT PRIMAIRE ET PRÉSCOLAIRE]";
   const cfgEcole   = config.ecole   || "[NOM DE L'ÉCOLE]";
   const cfgVille   = config.ville   || "";
 
