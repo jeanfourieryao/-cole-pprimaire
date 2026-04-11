@@ -1,6 +1,6 @@
 {
-  "name": "ÉcoleApp Primaire — Gestion Scolaire",
-  "short_name": "ÉcoleApp",
+  "name": "Mon souclou — Gestion Scolaire",
+  "short_name": "Mon souclou",
   "description": "Gestion des élèves et bulletins pour l'école primaire",
   "start_url": "./index.html",
   "display": "standalone",
